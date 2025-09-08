@@ -1,0 +1,26 @@
+[
+  {
+    "chunk_type": "text",
+    "page_number": 1,
+    "content": "UNITED FINANCE PLC FINANCIAL ANALYSIS SUMMARY\n6 \n \n \n \n \nFrom 2008 to 2014, the total number of outlets remained relatively unchanged at circa 720 units, but \ndecreased to 570 units in 2015. This decline was recorded in the small stores category (0-9 employees). \nIn contrast, the number of outlets in the large store category (50-249 employees) increased from 51 \nunits in 2008 to 103 units in 2015.  \nFurthermore, consumer spending has also changed and shows a preference towards the larger stores. \nIn fact, in the period 2008 to 2015, smaller outlets registered a compounded annual decrease in \nturnover of 1.1%, while the larger outlets recorded a compounded annual growth rate in turnover of \n10.6%. It is estimated that the retail arm of the United Group had a market share of 3.6% in 2015 \n(2014: 3.6%), which is based on the annual sales figure of €7.3 million (2014: €7.0 million).  \n \n0\n20\n40\n60\n80\n100\n120\n2008\n2009\n2010\n2011\n2012\n2013\n2014\n2015\nTurnover (€ 'million)\nChart I: Retail Apparel Market in Malta\n0-9 employees\n10-49 employees\n50-249 employees\n75.0\n80.0\n85.0\n90.0\n95.0\n100.0\n105.0\n110.0\n115.0\n2000\n2001\n2002\n2003\n2004\n2005\n2006\n2007\n2008\n2009\n2010\n2011\n2012\n2013\n2014\n2015\n2016\n2017\nChart II: Retail Trade (2010 = 100)\nEuropean Union (28 countries)\nMalta\nSource: Eurostat (retail trade except motor vehicles and motor cycles quarterly data)\n"
+  },
+  {
+    "chunk_type": "text",
+    "page_number": 2,
+    "content": "UNITED FINANCE PLC FINANCIAL ANALYSIS SUMMARY\n11 \n \n \n \nEurostat’s House Price Index for Malta – which is based on transactions covering terraced houses, \napartments and maisonettes – also indicates that residential property prices increased. The latest data \navailable refers to Q4 2017 and shows that said prices increased by 4.1% compared with the same \nquarter of 2016 (vide Charts II below).  \n \nWith regard to the number of permits, the Malta Environment and Planning Authority issued 7,508 \npermits during 2016, just over 90% more than in 2015 (statistics for 2017 have yet to be published). \nThis followed growth of 34.4% in 2014, marking three consecutive years of growth following a period \nof decline. The increase in permits issued in 2016 was mostly driven by the largest residential category, \nnamely apartments, which accounted for 84.1% of total permits granted.   \n55\n65\n75\n85\n95\n105\n115\n2005\n2006\n2007\n2008\n2009\n2010\n2011\n2012\n2013\n2014\n2015\n2016\n2017\nCHART II: Malta House Price Index\nSource: Eurostat\n"
+  },
+  {
+    "chunk_type": "chart",
+    "page_number": 1,
+    "content": {
+      "raw_output": "```json\n{\n  \"title\": \"Retail Apparel Market in Malta\",\n  \"x_axis\": [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015],\n  \"y_axis\": \"Turnover (€ million)\",\n  \"legend\": [\"0-9 employees\", \"10-49 employees\", \"50-249 employees\"],\n  \"values\": [\n    [50, 35, 60],\n    [65, 30, 60],\n    [55, 50, 70],\n    [50, 50, 75],\n    [55, 45, 80],\n    [60, 40, 100],\n    [60, 40, 80],\n    [55, 40, 100]\n  ]\n}\n```"
+    }
+  },
+  {
+    "chunk_type": "chart",
+    "page_number": 2,
+    "content": {
+      "raw_output": "```json\n{\n  \"title\": \"Malta House Price Index\",\n  \"x_axis\": [2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017],\n  \"y_axis\": [55, 65, 75, 85, 95, 105, 115],\n  \"legend\": [],\n  \"values\": [\n    58,\n    68,\n    80,\n    88,\n    95,\n    88,\n    86,\n    93,\n    85,\n    88,\n    90,\n    100,\n    110\n  ]\n}\n```"
+    }
+  }
+]

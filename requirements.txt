@@ -7,3 +7,5 @@ pypdf2>=3.0.0
 python-dotenv>=1.0.0
 google-generativeai>=0.3.0
 python-multipart>=0.0.6
+pymupdf>=1.23.0
+pillow>=10.0.0

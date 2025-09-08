@@ -5,6 +5,7 @@ import uuid
 from src.config import settings
 from src.embeddings import embedding_provider
 import asyncio
+import json
 
 class VectorStore:
     """Vector store using ChromaDB for storing and retrieving document embeddings."""
@@ -46,12 +47,53 @@ class VectorStore:
             metadatas = []
             
             for doc in documents:
-                ids.append(doc.get("id", str(uuid.uuid4())))
-                texts.append(doc["text"])
-                metadatas.append({
-                    "source": doc.get("source", ""),
-                    "chunk_index": doc.get("chunk_index", 0)
-                })
+                # Handle different types of chunks
+                chunk_type = doc.get("chunk_type", "text")
+                
+                if chunk_type == "chart":
+                    # Handle chart chunks
+                    ids.append(doc.get("id", str(uuid.uuid4())))
+                    # Convert chart content to text representation
+                    chart_text = f"Chart from page {doc.get('page_number', 'unknown')}: "
+                    chart_content = doc.get("content", {})
+                    if isinstance(chart_content, dict):
+                        chart_text += json.dumps(chart_content)
+                    else:
+                        chart_text += str(chart_content)
+                    texts.append(chart_text)
+                    metadatas.append({
+                        "source": doc.get("source", ""),
+                        "chunk_type": "chart",
+                        "page_number": doc.get("page_number", 0)
+                    })
+                elif doc.get("type") == "ai_parsed_image":
+                    # For AI parsed images, convert to text representation
+                    ids.append(doc.get("id", str(uuid.uuid4())))
+                    # Convert AI parsed content to text
+                    ai_text = f"Image analysis from page {doc.get('page_number', 'unknown')}: "
+                    ai_content = doc.get("content", {})
+                    if isinstance(ai_content, dict):
+                        ai_text += json.dumps(ai_content)
+                    else:
+                        ai_text += str(ai_content)
+                    texts.append(ai_text)
+                    metadatas.append({
+                        "source": doc.get("source", ""),
+                        "chunk_type": "ai_parsed_image",
+                        "page_number": doc.get("page_number", 0)
+                    })
+                elif doc.get("type") == "page_image":
+                    # Skip raw page images, as we process them with AI
+                    continue
+                else:
+                    # Handle text chunks (default)
+                    ids.append(doc.get("id", str(uuid.uuid4())))
+                    texts.append(doc["text"])
+                    metadatas.append({
+                        "source": doc.get("source", ""),
+                        "chunk_index": doc.get("chunk_index", 0),
+                        "chunk_type": "text"
+                    })
             
             # Generate embeddings
             embeddings = []
